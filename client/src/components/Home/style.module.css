@@ -1,0 +1,130 @@
+.main{
+    width: 100%;
+    height:100%;
+    display: flex;
+   
+    
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    height: 100vh;
+}
+
+.left_sub{
+    width: 80%;
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: rem; */
+    margin: 0.8rem 0;
+}
+h4{
+    color: inherit;
+    font-size: 9px;
+    line-height: 1.25;
+    margin-top: 0.2rem;
+    padding-bottom: 3px;
+    text-align: center;
+    white-space: normal;
+    width: 55px;
+    font-weight: 400;
+
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.profile{
+    width: 100%;
+    height: 7rem;
+    background-image:url("https://www.cipherschools.com/static/media/ProfileCover.e525f2d51356332792cb.png");
+    border-bottom: 1px solid rgba(10,30,50,0.1);;
+    
+}
+
+.sub_profile{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,#fff,transparent,#fff);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right_profile_1{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.img img{
+    width: 4rem;
+    height: 4rem;
+    margin: 0 1rem;
+}
+
+.intro{
+    /* width: 100%; */
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.intro h3{
+    font-size: 20px !important; 
+}
+
+.intro h4{
+    font-size: 24px !important;
+    width: 100%;
+    /* border: 2px solid black; */
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+.intro h5{
+    font-size: 16px;
+}
+
+.right_profile_2{
+    /* border:2px solid black; */
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_div{
+    /* border:2px solid black; */
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_div p{
+    font-size: 17px ;
+    font-weight: bold;
+}

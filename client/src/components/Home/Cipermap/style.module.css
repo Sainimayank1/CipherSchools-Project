@@ -1,0 +1,35 @@
+.main{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f5fa;;
+}
+
+.sub{
+    width: 90%;
+    margin-top: 2rem;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem ;
+    border-bottom: 2px solid rgba(10,30,50,0.1);
+}
+
+.p{
+    font-weight: bold;
+}
+
+.down{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 1rem;
+    justify-content: flex-end;
+    margin-bottom: 1rem ;
+}
+
+.down span{
+    margin: 0 0.2rem;
+}
