@@ -67,6 +67,12 @@
     border: none;
     outline: none;
     margin: 0 0.7rem;
+    width: 100%;
+}
+
+.sublinks div input[disabled]
+{
+    background: #fff;
 }
 
 .upper
@@ -92,4 +98,9 @@
     justify-content: center;
     line-height: 1;
     width: 80px;
+}
+
+.pencil{
+    width: 14px;
+    height: 14px;
 }

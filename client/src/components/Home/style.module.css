@@ -25,6 +25,11 @@
     /* padding: rem; */
     margin: 0.8rem 0;
 }
+
+.left_sub span{
+    cursor: pointer;
+}
+
 h4{
     color: inherit;
     font-size: 9px;
