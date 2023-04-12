@@ -26,7 +26,11 @@ function Intrest() {
 
     const handleSubmit = async (e) => {
 
-            dispatch({type:"SET_LOADER"})
+            if(user)
+            {
+
+                
+                dispatch({type:"SET_LOADER"})
             try {
             const config = {
                 header: {
@@ -42,6 +46,11 @@ function Intrest() {
         } catch (error) {
             toast.error(error.response.data.errors)
             dispatch({type:"CLOSE_LOADER"})
+        }
+        }
+        else
+        {
+            navigate("/login")
         }
     }
 

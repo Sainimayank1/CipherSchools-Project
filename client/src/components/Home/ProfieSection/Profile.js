@@ -1,8 +1,10 @@
 import React from 'react'
 import style from "../style.module.css"
 import { useSelector, useDispatch } from "react-redux"
+import { useNavigate } from 'react-router-dom'
 
 function Profile() {
+    const navigate = useNavigate();
     const { user } = useSelector(state => state.userReducer)
     return (
         <div className={style.profile}>

@@ -3,12 +3,14 @@ import style from "./style.module.css"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
+import { useNavigate } from 'react-router-dom'
 
 function About() {
   const { user } = useSelector(state => state.userReducer)
   const [data,setData] = useState({_id:user._id , about:""});
   const [ischange , setChange] = useState(false)
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
   {
@@ -17,8 +19,11 @@ function About() {
 
   const handleSubmit = async () =>
   {
-    dispatch({ type: "SET_LOADER" })
-    try {
+    if(user)
+    {
+
+      dispatch({ type: "SET_LOADER" })
+      try {
         const config = {
             header: {
                 'Content-type': 'application/json'
@@ -33,11 +38,16 @@ function About() {
     catch (error) {
         toast.error(error.response.data.errors)
         dispatch({ type: "CLOSE_LOADER" })
+      }
     }
-  }
-
-  return (
-    <div className={style.about_main}>
+    else
+    {
+        navigate("/login")
+    }
+    }
+    
+    return (
+      <div className={style.about_main}>
     <Toaster position="top-right" reverseOrder={false} />
             <div className={style.sub}>
                 <div className={style.upper}>

@@ -3,10 +3,12 @@ import style from "./style.module.css"
 import {useSelector , useDispatch} from "react-redux"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
+import { useNavigate } from 'react-router-dom'
 
 function Weblinks() {
 
     const {user } = useSelector(state => state.userReducer)
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [isEditable, setEdit] = useState(false);
     const [data , setData] = useState({
@@ -27,8 +29,10 @@ function Weblinks() {
 
     const handleSubmit = async () =>
     {
-        dispatch({type:"SET_LOADER"})
-        try {
+        if(user){
+
+            dispatch({type:"SET_LOADER"})
+            try {
             const config = {
                 header: {
                     'Content-type': 'application/json'
@@ -44,6 +48,11 @@ function Weblinks() {
                 toast.error(error.response.data.errors)
                 dispatch({type:"CLOSE_LOADER"})
             }
+        }
+        else
+    {
+        navigate("/login")
+    }
     }
 
     return (

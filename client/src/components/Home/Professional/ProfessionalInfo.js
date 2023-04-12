@@ -3,9 +3,11 @@ import style from "./style.module.css"
 import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 import toast, { Toaster } from "react-hot-toast"
+import { useNavigate } from 'react-router-dom'
 
 function ProfessionalInfo() {
     const { user } = useSelector(state => state.userReducer)
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [isEditable, setEdit] = useState(false);
 
@@ -21,8 +23,11 @@ function ProfessionalInfo() {
     }
 
     const handleSubmit = async () => {
-        dispatch({ type: "SET_LOADER" })
-        try {
+        if(user)
+        {
+
+            dispatch({ type: "SET_LOADER" })
+            try {
             const config = {
                 header: {
                     'Content-type': 'application/json'
@@ -38,6 +43,11 @@ function ProfessionalInfo() {
             toast.error(error.response.data.errors)
             dispatch({ type: "CLOSE_LOADER" })
         }
+    }
+    else
+    {
+        navigate("/login")
+    }
     }
 
 
