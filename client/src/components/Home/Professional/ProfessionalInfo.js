@@ -5,11 +5,11 @@ function ProfessionalInfo() {
   return (
     <div className={style.main}>
         <div className={style.sub}>
-            <div>
+            <div className={style.upper}>
                 <p>PROFESSIONAL INFO</p>
-                <div className={style.btn}></div>
+                <div className={style.btn}>Edit</div>
             </div>
-            <div>
+            <div className={style.sub_link_main}> 
             <div className={style.sublinks}>
                             <p>Linkdin</p>
                             <div>

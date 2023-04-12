@@ -42,35 +42,3 @@
     line-height: 1;
     width: 80px;
 }
-
-.sub_link_main{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-around;
-    
-}
-
-.sublinks{
-    display: flex;
-    width: 48%;
-    flex-direction: column;
-}
-
-.sublinks div{
-    background: #fff;
-    padding: 0.4rem 0.7rem;
-    border-radius: 0.7rem;
-    display: flex;
-    align-items: center;
-}
-
-.sublinks p{
-    font-size: 15px;
-}
-
-.sublinks div input{
-    border: none;
-    outline: none;
-    margin: 0 0.7rem;
-}

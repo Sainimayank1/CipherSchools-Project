@@ -53,7 +53,7 @@
 
 .sublinks{
     display: flex;
-    width: 48%;
+    flex: 1;
     flex-direction: column;
 }
 

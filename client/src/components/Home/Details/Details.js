@@ -4,6 +4,8 @@ import CIperMap from '../Cipermap/CIperMap'
 import style from "./style.module.css"
 import Weblinks from '../WebLinks/Weblinks'
 import ProfessionalInfo from '../Professional/ProfessionalInfo'
+import Password from '../password/Password'
+import Intrest from '../Intrest/Intrest'
 
 function Details() {
   return (
@@ -12,6 +14,8 @@ function Details() {
         <CIperMap/>
         <Weblinks/>
         <ProfessionalInfo/>
+        <Password/>
+        <Intrest/>
         </div>
   )
 }
