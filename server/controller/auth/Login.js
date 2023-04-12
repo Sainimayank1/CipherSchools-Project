@@ -6,10 +6,11 @@ import { createToken } from "./createToken.js";
 const Login = async (req, res) => {
     const { email, password } = req.body;
 
-
-    if(email === "")
+    if(email === "" && password === "")
+        res.status(400).json({errors:"Please enter valid email and password"})
+    else if(email === "")
         res.status(400).json({errors:"PLease enter email"})
-    if(password === "")
+    else if(password === "")
         res.status(400).json({errors:"Please enter password"})
 
     try {
@@ -21,10 +22,10 @@ const Login = async (req, res) => {
                 return res.status(200).json({ msg: "User login succesfully", maintoken});
             }
             else
-                return res.status(401).json({ errors :[ "Password Does't match"] });
+                return res.status(401).json({ errors :"Password Does't match"});
         }
         else
-            return res.status(404).json({errors: [ "Email not found" ]});
+            return res.status(404).json({errors:"Email not found"});
 
     }
     catch (error) {

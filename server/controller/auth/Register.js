@@ -1,20 +1,23 @@
 import bcrypt from "bcrypt";
 import User from "../../modals/User.js"
+import express from "express";
 
 
 
 
                                       
 const Register = async (req, res) => {
-  const {fname, lname ,  email,   password, phone } = req.body.state;
+  const {fname, lname ,  email,   password, phone } = req.body;
 
-  if(fname === "")
+  if(fname==="" && email==="" && phone==="" && password==="")
+    res.status(400).json({error:"Please enter valid details"})
+  else if(fname === "")
     res.status(400).json({error:"Please enter First name"})
-  if(email === "")
+  else if(email === "")
     res.status(400).json({error:"Please enter Correct email"})
-  if(phone === "")
+  else if(phone === "")
     res.status(400).json({error:"Please enter phone number"})
-  if(password === "")
+  else if(password === "")
     res.status(400).json({error :"Please enter password"})
 
   try {
