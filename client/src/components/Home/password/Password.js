@@ -1,13 +1,15 @@
 import React from 'react'
 import style from "./style.module.css"
+import { useNavigate } from 'react-router-dom'
 
 function Password() {
+  const navigate = useNavigate();
   return (
     <div className={style.main}>
     <div className={style.sub}>
             <div className={style.upper}>
                 <p>PASSWORD & SECURITY</p>
-                <div className={style.btn}>
+                <div className={style.btn} onClick={()=>{navigate('/password')}}>
                     Change
                 </div>
             </div>

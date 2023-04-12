@@ -83,3 +83,16 @@
         display: none;
     }
 }
+
+@media screen and (max-width : 1000px)
+{
+    .hamburger{
+        display:none;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .left_browse{
+        display: none;
+    }
+}

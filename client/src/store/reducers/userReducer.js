@@ -39,9 +39,6 @@ const userReducer = (state = initail, action) => {
             const { user } = decoded;
             return { ...state, token: action.payload, user: user };
     }
-    else if(action.type === "REMOVE-USER")
-        return{...state , user:"" , token:""};
-    
     else if (action.type === "LOGOUT") 
         return { ...state, token: "", user: "" };
     else return state;

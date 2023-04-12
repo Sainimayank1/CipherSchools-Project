@@ -81,3 +81,17 @@
     border: none;
     width: 100%;
 }
+
+
+@media screen and (max-width:850px) {
+    .sub_link_main{
+        flex-direction: column;
+        /* border: 2px solid red; */
+    }
+
+    .sublinks{
+        /* border: 2px solid black; */
+        width: 100%;
+    }
+    
+}

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
 
     const navigate = useNavigate();
+    const {loading} = useSelector(state => state.userReducer)
 
     const [data, setData] = useState({ email: "", password: "" });
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Login() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        console.log(data)
         dispatch({type:"SET_LOADER"})
         try {
             const config = {
@@ -26,12 +27,13 @@ function Login() {
                     'Content-type': 'application/json'
                 }
             }
-            const response = await axios.get('http://localhost:5000/user/login', data, config)
+            const response = await axios.post('http://localhost:5000/user/login',data,config)
             if (response) 
             {
                 toast.success(response.data.msg)
                 dispatch({type:"SET_TOKEN" , payload:response.data.maintoken})
                 dispatch({type:"CLOSE_LOADER"})
+                navigate('/')
             }
             } catch (error) {
                 toast.error(error.response.data.errors)
@@ -68,7 +70,7 @@ function Login() {
                             <a><p>Forgot Password ?</p></a>
                         </div>
                         <div className={style.btn} onClick={handleSubmit}>
-                            Signin
+                            {loading ? "....." : "Signin"}
                         </div>
                         <div className={style.register}>
                             <h3>Don't have account ? <Link to={'/register'}>Get Started</Link></h3>

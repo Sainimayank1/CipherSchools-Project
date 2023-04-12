@@ -9,7 +9,14 @@ const userSchema = new mongoose.Schema(
             type:Schema.Types.ObjectId,
             ref:"user",
         },
-        intrest:[{type:String}],
+        appdev:{type:Boolean},
+        webdev:{type:Boolean},
+        gamedev:{type:Boolean},
+        dataStructure:{type:Boolean},
+        programming:{type:Boolean},
+        machineLearning:{type:Boolean},
+        dataScience:{type:Boolean},
+        other:{type:Boolean}
     }, {timestamps:true}
 )
 

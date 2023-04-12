@@ -7,10 +7,11 @@ const webUpdate = async (req, res) => {
         userId,
         education,
         currently } = req.body;
+
     try {
         const user = await Prof.findOne({ userId });
         if (user) {
-            const response = await Web.findOneAndUpdate(userId,
+            const response = await Prof.findOneAndUpdate(userId,
                 {
                     userName,
                     education,
@@ -19,7 +20,7 @@ const webUpdate = async (req, res) => {
             return res.status(200).json({ msg: "Details succesfully update" });
         }
         else {
-            const data = await Web.create({
+            const data = await Prof.create({
                 userId,
                 userName,
                 education,
