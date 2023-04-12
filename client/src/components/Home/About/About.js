@@ -7,7 +7,9 @@ import { useNavigate } from 'react-router-dom'
 
 function About() {
   const { user } = useSelector(state => state.userReducer)
-  const [data,setData] = useState({_id:user._id , about:""});
+  const {_id} = user;
+  const [data,setData] = useState({_id:_id,
+     about:""});
   const [ischange , setChange] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate();

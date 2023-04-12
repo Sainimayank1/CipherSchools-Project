@@ -25,7 +25,10 @@ function Register() {
             }
             const response = await axios.post('http://localhost:5000/user/register', data, config)
             if (response) 
+            {
                 toast.success(response.data.msg)
+                navigate("/login")
+            }
             } catch (error) {
                 console.log(error.response.data.error);
                 toast.error(error.response.data.error)

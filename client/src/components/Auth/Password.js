@@ -36,6 +36,7 @@ function Password() {
                     if (response) {
                         toast.success(response.data.msg)
                         dispatch({ type: "CLOSE_LOADER" })
+                        navigate("/")
                     }
                 } catch (error) {
                     toast.error(error.response.data.errors)
